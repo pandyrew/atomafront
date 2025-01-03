@@ -1,0 +1,84 @@
+@import url("https://api.fontshare.com/v2/css?f[]=outfit@1&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-outfit {
+    font-family: "Outfit", sans-serif;
+  }
+  .font-satoshi {
+    font-family: "Satoshi", sans-serif;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(6deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animate-gradient-slow {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, black 1px, transparent 1px),
+    linear-gradient(to bottom, black 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glow-effect {
+  box-shadow: 0 0 30px 5px rgba(66, 153, 225, 0.2);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 30px 5px rgba(66, 153, 225, 0.2);
+  }
+  to {
+    box-shadow: 0 0 40px 8px rgba(66, 153, 225, 0.4);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.bg-noise-bg {
+  background-image: url("/images/landing/noise.png");
+  background-repeat: repeat;
+  background-size: 200px 200px; /* Adjust size as needed */
+}
