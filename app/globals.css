@@ -82,3 +82,15 @@
   background-repeat: repeat;
   background-size: 200px 200px; /* Adjust size as needed */
 }
+
+.rounded-xl {
+  border-radius: 0;
+}
+
+.rounded-br-3xl {
+  border-bottom-right-radius: 0;
+}
+
+.rounded-bl-3xl {
+  border-bottom-left-radius: 0;
+}
