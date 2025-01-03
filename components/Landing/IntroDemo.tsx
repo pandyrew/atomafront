@@ -9,12 +9,12 @@ interface IntroDemoProps {
 export const IntroDemo = ({ className }: IntroDemoProps) => {
   return (
     <motion.div
-      className={`w-[450px] bg-white/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 ${className}`}
+      className={`w-[450px] rounded-xl bg-white/50 backdrop-blur-sm -3xl p-8 border border-gray-200 ${className}`}
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
     >
-      <div className="space-y-6">
+      <div className="space-y-6 ">
         <div>
           <motion.p
             className="text-sm font-satoshi text-gray-500 uppercase tracking-wider mb-2"
@@ -44,7 +44,7 @@ export const IntroDemo = ({ className }: IntroDemoProps) => {
         </div>
 
         <motion.button
-          className="mt-4 px-6 py-2 bg-black text-white rounded-xl font-satoshi hover:bg-gray-800 transition-colors"
+          className="mt-4 px-6 py-2 bg-black text-white -xl font-satoshi hover:bg-gray-800 transition-colors"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.8 }}

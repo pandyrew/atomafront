@@ -84,7 +84,7 @@ export const Hero = () => {
           }}
           transition={{ duration: 0.3 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-[#ffc55b] rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-[#ffc55b] -full blur-3xl" />
         </motion.div>
 
         <div className="max-w-7xl mx-auto relative bottom-0">

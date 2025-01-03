@@ -98,13 +98,13 @@ export const Demo = () => {
                   ? "Paste a news article URL or enter a search term"
                   : placeholderText
               }
-              className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm rounded-xl border border-gray-200 
+              className="rounded-xl w-full px-4 py-3 bg-white/50 backdrop-blur-sm -xl border border-gray-200 
                 outline-none focus:border-gray-300 transition-all duration-200 font-satoshi placeholder:text-gray-400
                 pr-[120px] text-black text-sm"
             />
             <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2 text-xs text-gray-400">
               <span className="font-satoshi">or</span>
-              <kbd className="px-1.5 py-0.5 bg-gray-100 rounded-md font-satoshi">
+              <kbd className="px-1.5 py-0.5 bg-gray-100 -md font-satoshi">
                 ⌘K
               </kbd>
             </div>
@@ -112,14 +112,14 @@ export const Demo = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full h-10 inline-flex items-center justify-center gap-2 bg-black text-white hover:bg-gray-900 
-              rounded-xl disabled:opacity-50 disabled:pointer-events-none transition-colors text-sm font-satoshi"
+            className="w-full h-10 inline-flex rounded-xl items-center justify-center gap-2 bg-black text-white hover:bg-gray-900 
+              -xl disabled:opacity-50 disabled:pointer-events-none transition-colors text-sm font-satoshi"
           >
             {isLoading ? (
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
+                className="w-4 h-4 border-2 border-white/30 border-t-white -full"
               />
             ) : (
               <>

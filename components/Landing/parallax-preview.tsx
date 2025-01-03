@@ -133,20 +133,20 @@ export const ParallaxPreview = () => {
 
         <div className="max-w-7xl mx-auto px-4 py-24 flex items-center justify-between">
           <div className="relative w-2/3 h-[600px] perspective-1000">
-            <div className="absolute -left-20 top-20 w-40 h-40 bg-blue-200/20 rounded-full blur-3xl animate-pulse-slow" />
-            <div className="absolute -right-10 bottom-20 w-60 h-60 bg-purple-200/20 rounded-full blur-3xl animate-pulse-slow animation-delay-2000" />
+            <div className="absolute -left-20 top-20 w-40 h-40 bg-blue-200/20 -full blur-3xl animate-pulse-slow" />
+            <div className="absolute -right-10 bottom-20 w-60 h-60 bg-purple-200/20 -full blur-3xl animate-pulse-slow animation-delay-2000" />
 
             {features.map((feature, index) => (
               <div
                 key={index}
                 className={
-                  "absolute left-1/2 top-3/4 w-[400px] transition-all duration-300 rounded-full"
+                  "absolute left-1/2 top-3/4 w-[400px] transition-all duration-300 -full"
                 }
                 style={getFeatureStyles(index)}
               >
                 <div
                   className={`
-                  relative rounded-[10px] 
+                  relative -[10px] 
                   ${index === activeIndex ? "glow-effect" : ""}
                 `}
                 >
@@ -155,7 +155,7 @@ export const ParallaxPreview = () => {
                     alt={feature.title}
                     width={500}
                     height={300}
-                    className="rounded-[10px] shadow-2xl border-2 border-gray-600/20 backdrop-blur-sm"
+                    className="-[10px] shadow-2xl rounded-xl border-2 border-gray-600/20 backdrop-blur-sm"
                   />
                 </div>
               </div>
@@ -163,14 +163,14 @@ export const ParallaxPreview = () => {
           </div>
 
           <div className="w-1/3 relative">
-            <div className="absolute -left-10 top-0 w-20 h-20 border border-gray-200 rounded-lg rotate-12 animate-float" />
-            <div className="absolute right-0 bottom-20 w-16 h-16 border border-gray-200 rounded-full animate-float animation-delay-1000" />
+            <div className="absolute -left-10 top-0 w-20 h-20 border border-gray-200 -lg rotate-12 animate-float" />
+            <div className="absolute right-0 bottom-20 w-16 h-16 border border-gray-200 -full animate-float animation-delay-1000" />
 
             <div className="transition-all duration-500  relative z-10">
               <div
                 className={`
                 transition-opacity duration-300 
-                backdrop-blur-sm bg-white/30 rounded-2xl p-8 border border-white/20
+                backdrop-blur-sm bg-white/30 -2xl p-8 border border-white/20
                 ${isTextFading ? "opacity-0" : "opacity-100"}
               `}
               >
