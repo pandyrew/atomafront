@@ -20,7 +20,7 @@ const StepCard = ({
 }: StepCardProps) => {
   return (
     <motion.div
-      className={`rounded-3xl p-8 h-full ${color}`}
+      className={`-3xl p-8 h-full ${color}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -28,7 +28,7 @@ const StepCard = ({
       transition={{ duration: 0.3 }}
     >
       <div className="flex items-start justify-start gap-3 mb-6">
-        <div className="bg-white/90 p-2 rounded-xl">{icon}</div>
+        <div className="bg-white/90 p-2 -xl">{icon}</div>
         <span className="text-2xl font-satoshi">{title}</span>
       </div>
       <p className="text-gray-800 font-satoshi mb-8">{description}</p>
