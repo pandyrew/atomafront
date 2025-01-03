@@ -13,12 +13,12 @@ import { Availability } from "@/components/Landing/Availability";
 
 export default function Page() {
   return (
-    <div className="relative w-full bg-white">
+    <div className="relative w-full bg-[#171717]">
       <Footer />
       <Navbar />
       <Noise />
       <div className="relative z-10 translate-y-0 pb-[50vh] pointer-events-none">
-        <div className="bg-slate-100 pointer-events-auto">
+        <div className="bg-[#171717] pointer-events-auto">
           <div className="h-screen relative">
             <Hero />
             <div className="absolute bottom-0 w-full">
