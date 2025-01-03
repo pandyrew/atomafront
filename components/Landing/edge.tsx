@@ -12,11 +12,9 @@ interface StepCardProps {
 }
 
 const StepCard = ({
-  number,
   title,
   description,
   icon,
-  color,
 }: StepCardProps) => {
   return (
     <motion.div

@@ -47,12 +47,10 @@ const NavMenu = ({ children }: NavMenuProps) => {
 
 // NavDropdown Component
 const NavDropdown = ({
-  id,
   title,
   items,
   onHover,
   isDark,
-  isActive,
   isMenuHovered,
 }: NavDropdownProps) => {
   const buttonRef = React.useRef<HTMLButtonElement>(null);

@@ -53,7 +53,7 @@ export const ParallaxPreview = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [features.length]);
 
   useEffect(() => {
     // When activeIndex changes, trigger the fade out

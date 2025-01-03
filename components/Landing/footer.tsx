@@ -3,7 +3,6 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import black_logo from "@/public/images/landing/text_logo_black.svg";
 
 export const Footer = () => {
   // Add scroll animation logic
