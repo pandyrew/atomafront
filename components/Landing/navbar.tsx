@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { useScroll, motion, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 // Types
 type ActiveDropdown = "companies" | "about" | null;
@@ -47,12 +47,10 @@ const NavMenu = ({ children }: NavMenuProps) => {
 
 // NavDropdown Component
 const NavDropdown = ({
-  id,
   title,
   items,
   onHover,
   isDark,
-  isActive,
   isMenuHovered,
 }: NavDropdownProps) => {
   const buttonRef = React.useRef<HTMLButtonElement>(null);

@@ -10,14 +10,17 @@ import { Footer } from "@/components/Landing/footer";
 import CompatibleCompanies from "@/components/Landing/compatible";
 import { Edge } from "@/components/Landing/edge";
 import { Availability } from "@/components/Landing/Availability";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 export default function Page() {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
   return (
     <div className="relative w-full bg-white">
       <Footer />
       <Navbar />
       <Noise />
-      <div className="relative z-10 translate-y-0 pb-[50vh] pointer-events-none">
+      <div className="relative z-10 translate-y-0 pb-[42vh] pointer-events-none">
         <div className="bg-slate-100 pointer-events-auto">
           <div className="h-screen relative">
             <Hero />
@@ -25,7 +28,7 @@ export default function Page() {
               <CompatibleCompanies />
             </div>
           </div>
-          <ParallaxPreview />
+          {isDesktop && <ParallaxPreview />}
           <Edge />
           <FAQ />
           <Availability />

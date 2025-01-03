@@ -9,7 +9,7 @@ interface IntroDemoProps {
 export const IntroDemo = ({ className }: IntroDemoProps) => {
   return (
     <motion.div
-      className={`w-[450px] rounded-xl bg-white/50 backdrop-blur-sm -3xl p-8 border border-gray-200 ${className}`}
+      className={`w-fit rounded-xl bg-white/50 backdrop-blur-sm -3xl p-8 border border-gray-200 ${className}`}
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}

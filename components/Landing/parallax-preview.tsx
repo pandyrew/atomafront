@@ -53,7 +53,7 @@ export const ParallaxPreview = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [features.length]);
 
   useEffect(() => {
     // When activeIndex changes, trigger the fade out
@@ -71,7 +71,6 @@ export const ParallaxPreview = () => {
     const ACTIVATION_SCROLL = 800; // pixels to scroll before first activation
     const isPast = index < activeIndex;
     const isWaiting = index > activeIndex;
-    const isActive = index === activeIndex;
 
     // If we haven't scrolled enough, keep all items in waiting state
     if (scrollY < ACTIVATION_SCROLL) {
@@ -91,13 +90,12 @@ export const ParallaxPreview = () => {
         transform: `
           translate(-50%, -50%)
           translateY(-10vh)
-
           translateZ(${-index * 50}px)
         `,
         opacity: 0,
         pointerEvents: "none",
-        visibility: "hidden" as const,
-      };
+        visibility: "hidden",
+      } as const;
     }
 
     if (isWaiting) {

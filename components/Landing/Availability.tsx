@@ -86,7 +86,7 @@ export const Availability = () => {
                 scale: 1,
               }}
               viewport={{ once: true, margin: "-100px" }}
-              className="absolute -left-8 bottom-0 transform translate-y-1/4 z-20"
+              className="absolute left-4 md:-left-8 md:bottom-0 -bottom-[160px] transform md:translate-y-1/4 z-20"
             >
               <div className="relative">
                 {/* iPhone Frame */}

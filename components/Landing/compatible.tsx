@@ -1,24 +1,32 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 
 export default function CompatibleCompanies() {
   return (
-    <div className="bg-white flex flex-row gap-4 justify-center items-center">
-      <div className="flex flex-row gap-[200px] items-center p-7">
+    <div className="bg-white w-full py-4 md:py-7">
+      <div className="flex flex-col md:flex-row md:gap-[100px] items-center px-4">
         <motion.h2
-          className="text-2xl font-light font-outfit text-black"
+          className="text-lg md:text-2xl font-light font-outfit text-black mb-4 md:mb-0 md:ml-[150px] whitespace-nowrap"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           Compatible with
         </motion.h2>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }}>
-          <InfiniteMovingCards items={companyLogos} direction="right" speed="normal" className="max-w-3xl" />
+        <motion.div
+          className="flex justify-end w-full"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <InfiniteMovingCards
+            items={companyLogos}
+            direction="right"
+            speed="normal"
+          />
         </motion.div>
       </div>
     </div>

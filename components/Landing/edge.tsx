@@ -11,13 +11,7 @@ interface StepCardProps {
   color: string;
 }
 
-const StepCard = ({
-  number,
-  title,
-  description,
-  icon,
-  color,
-}: StepCardProps) => {
+const StepCard = ({ title, description, icon, color }: StepCardProps) => {
   return (
     <motion.div
       className={`-3xl p-8 h-full ${color}`}
