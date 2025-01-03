@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { IntroDemo } from "./IntroDemo";
 import { Demo } from "./Demo";
 
-const AtomSVG = () => (
+const AtomSVG = ({ isColored = true }) => (
   <svg
     viewBox="0 0 240 240"
-    className="w-full h-full absolute inset-0"
+    className="w-full h-full absolute inset-0 opacity-30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -27,18 +27,18 @@ const AtomSVG = () => (
         cy="120"
         rx="100"
         ry="30"
-        stroke="currentColor"
-        strokeWidth="1"
-        className="opacity-20"
+        stroke={isColored ? "url(#orbit-gradient-1)" : "currentColor"}
+        strokeWidth="2"
+        className="opacity-30"
       />
       <ellipse
         cx="120"
         cy="120"
         rx="100"
         ry="30"
-        stroke="currentColor"
-        strokeWidth="1"
-        className="opacity-20"
+        stroke={isColored ? "url(#orbit-gradient-2)" : "currentColor"}
+        strokeWidth="2"
+        className="opacity-30"
         transform="rotate(60 120 120)"
       />
       <ellipse
@@ -46,14 +46,28 @@ const AtomSVG = () => (
         cy="120"
         rx="100"
         ry="30"
-        stroke="currentColor"
-        strokeWidth="1"
-        className="opacity-20"
+        stroke={isColored ? "url(#orbit-gradient-3)" : "currentColor"}
+        strokeWidth="2"
+        className="opacity-30"
         transform="rotate(-60 120 120)"
       />
     </motion.g>
 
-    {/* Nucleus */}
+    {/* Gradients */}
+    <defs>
+      <linearGradient id="orbit-gradient-1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#60A5FA" />
+        <stop offset="100%" stopColor="#A855F7" />
+      </linearGradient>
+      <linearGradient id="orbit-gradient-2" x1="1" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#A855F7" />
+        <stop offset="100%" stopColor="#FFC55B" />
+      </linearGradient>
+      <linearGradient id="orbit-gradient-3" x1="0" y1="1" x2="1" y2="0">
+        <stop offset="0%" stopColor="#FFC55B" />
+        <stop offset="100%" stopColor="#60A5FA" />
+      </linearGradient>
+    </defs>
   </svg>
 );
 
@@ -72,7 +86,7 @@ export const Hero = () => {
           }}
           transition={{ duration: 0.3 }}
         >
-          <AtomSVG />
+          <AtomSVG isColored={false} />
         </motion.div>
 
         {/* Gradient Blob */}
