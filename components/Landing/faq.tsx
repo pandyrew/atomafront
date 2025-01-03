@@ -15,17 +15,17 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="border-b border-gray-100"
+      className="border-b border-gray-800"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="py-6 w-full flex justify-between items-center text-left hover:text-gray-600 transition-colors duration-200"
+        className="py-6 w-full flex justify-between items-center text-left hover:text-gray-400 transition-colors duration-200"
       >
-        <span className="text-xl font-outfit text-black">{question}</span>
+        <span className="text-xl font-outfit text-white">{question}</span>
         <motion.span
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="text-2xl font-light text-black"
+          className="text-2xl font-light text-white"
         >
           +
         </motion.span>
@@ -39,7 +39,7 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-gray-500 font-satoshi">{answer}</p>
+            <p className="pb-6 text-gray-400 font-satoshi">{answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -77,18 +77,18 @@ export const FAQ = () => {
   ];
 
   return (
-    <section className="py-24 px-4 relative overflow-hidden bg-white">
-      <div className="max-w-3xl mx-auto bg-slate-200/50 backdrop-blur-sm rounded-xl py-12 px-16 relative">
+    <section className="py-24 px-4 relative overflow-hidden bg-[#171717]">
+      <div className="max-w-3xl mx-auto bg-black/50 backdrop-blur-sm rounded-xl py-12 px-16 relative">
         <div className="flex justify-between items-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-outfit mb-4 text-black">
+            <h2 className="text-4xl font-outfit mb-4 text-white">
               Frequently Asked Questions
             </h2>
-            <p className="text-gray-500 font-satoshi">
+            <p className="text-gray-400 font-satoshi">
               Everything you need to know about our market intelligence platform
             </p>
           </motion.div>
@@ -97,7 +97,7 @@ export const FAQ = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="hidden md:block ml-auto "
+            className="hidden md:block ml-auto"
           >
             <svg
               width="120"
@@ -109,7 +109,7 @@ export const FAQ = () => {
             >
               <motion.path
                 d="M40 40 L90 40 L90 90 L95 85 L90 90 L85 85"
-                stroke="black"
+                stroke="white"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"

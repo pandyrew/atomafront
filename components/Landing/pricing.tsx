@@ -28,34 +28,34 @@ const PricingCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
-      className="relative bg-white/50 backdrop-blur-sm -3xl p-8 border border-white/10"
+      className="relative bg-black/50 backdrop-blur-sm p-8 border border-gray-800"
     >
       {isPopular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-          <div className="bg-blue-500 text-white text-xs font-satoshi px-3 py-1 -full">
+          <div className="bg-blue-500 text-white text-xs font-satoshi px-3 py-1 rounded-full">
             MOST POPULAR
           </div>
         </div>
       )}
       <div className="space-y-6 flex flex-col justify-between h-full">
         <div>
-          <h3 className="text-2xl font-outfit text-black mb-2">{title}</h3>
+          <h3 className="text-2xl font-outfit text-white mb-2">{title}</h3>
           <div className="flex items-baseline gap-2">
-            <span className="text-4xl font-outfit font-medium text-black">
+            <span className="text-4xl font-outfit font-medium text-white">
               {price}
             </span>
             {price !== "Free" && (
-              <span className="text-gray-500 font-satoshi">/ month</span>
+              <span className="text-gray-400 font-satoshi">/ month</span>
             )}
           </div>
-          <p className="mt-4 text-gray-500 font-satoshi">{description}</p>
+          <p className="mt-4 text-gray-400 font-satoshi">{description}</p>
         </div>
 
         <div className="space-y-4 h-full">
           {features.map((feature, index) => (
             <div key={index} className="flex items-center gap-3">
               <svg
-                className="w-5 h-5 text-blue-500"
+                className="w-5 h-5 text-blue-400"
                 viewBox="0 0 24 24"
                 fill="none"
               >
@@ -74,7 +74,7 @@ const PricingCard = ({
                   strokeWidth="2"
                 />
               </svg>
-              <span className="text-gray-600 font-satoshi">{feature}</span>
+              <span className="text-gray-400 font-satoshi">{feature}</span>
             </div>
           ))}
         </div>
@@ -83,8 +83,8 @@ const PricingCard = ({
           className={`w-full ${
             isPopular
               ? "bg-blue-500 hover:bg-blue-600"
-              : "bg-[#0F172A] hover:bg-[#1E293B]"
-          } text-white font-satoshi`}
+              : "bg-white hover:bg-gray-200 text-black"
+          } font-satoshi`}
         >
           {buttonText}
         </Button>
@@ -131,12 +131,12 @@ export const Pricing = () => {
   ];
 
   return (
-    <section className="py-24 px-4 relative overflow-y-hidden">
+    <section className="py-24 px-4 relative overflow-y-hidden bg-[#171717]">
       {/* Background Gradient Pattern */}
       <div className="absolute inset-0 z-1">
         <div className="absolute top-[800px] left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="w-[1400px] h-[800px] rotate-[-80deg]">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-blue-400/20 to-[#ffc55b]/20 rounded-[100px] blur-3xl transform scale-y-[5.5] scale-x-[0.8]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 via-blue-400/10 to-[#ffc55b]/10 rounded-[100px] blur-3xl transform scale-y-[5.5] scale-x-[0.8]" />
           </div>
         </div>
       </div>
@@ -148,15 +148,15 @@ export const Pricing = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-outfit text-black mb-4">
+          <h2 className="text-4xl font-outfit text-white mb-4">
             Simple, transparent pricing
           </h2>
-          <p className="text-gray-500 font-satoshi">
+          <p className="text-gray-400 font-satoshi">
             Choose the plan that best fits your needs
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
             <PricingCard key={plan.title} {...plan} delay={index * 0.1} />
           ))}

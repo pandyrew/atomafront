@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { useScroll, motion, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 // Types
 type ActiveDropdown = "companies" | "about" | null;
@@ -108,14 +108,14 @@ const NavDropdown = ({
           >
             <span
               className={`transition-colors duration-300 ease-in-out ${
-                isDark ? "text-white" : "text-black"
+                isDark ? "text-white" : "text-gray-200"
               } font-satoshi`}
             >
               {title}
             </span>
             <svg
               className={`w-4 h-4 ml-1 transition-colors duration-300 ease-in-out ${
-                isDark ? "stroke-white" : "stroke-black"
+                isDark ? "stroke-white" : "stroke-white"
               }`}
               fill="none"
               stroke="currentColor"
@@ -133,7 +133,7 @@ const NavDropdown = ({
           <button className="flex items-center text-sm  h-[20px]">
             <span
               className={`transition-colors duration-300 ease-in-out ${
-                isDark ? "text-white" : "text-black"
+                isDark ? "text-white" : "text-gray-200"
               } font-satoshi`}
             >
               {title}
@@ -221,7 +221,7 @@ const NavLink = ({
         <Link href={href} className="flex items-center text-sm h-[20px]">
           <span
             className={`transition-colors duration-300 ease-in-out ${
-              isDark ? "text-white" : "text-black"
+              isDark ? "text-white" : "text-gray-200"
             } font-satoshi`}
           >
             {title}
@@ -231,7 +231,7 @@ const NavLink = ({
         <Link href={href} className="flex items-center text-sm h-[20px]">
           <span
             className={`transition-colors duration-300 ease-in-out ${
-              isDark ? "text-white" : "text-black"
+              isDark ? "text-white" : "text-gray-200"
             } font-satoshi`}
           >
             {title}
@@ -292,9 +292,9 @@ export const Navbar = () => {
           {/* Left Block: Logo and Navigation */}
           <div
             className={`flex items-center ${
-              isDropdownOpen ? "bg-transparent" : "bg-white/40"
+              isDropdownOpen ? "bg-transparent" : "bg-black/40"
             } backdrop-blur-sm px-6 h-12 rounded-br-3xl border-b border-r ${
-              isDropdownOpen ? "border-transparent" : "border-gray-200"
+              isDropdownOpen ? "border-transparent" : "border-gray-200/20"
             } transition-all duration-300 ease-in-out`}
           >
             {/* Logo */}
@@ -303,7 +303,7 @@ export const Navbar = () => {
                 src={
                   isDropdownOpen
                     ? "/images/landing/text_logo_white.svg"
-                    : "/images/landing/text_logo_black.svg"
+                    : "/images/landing/text_logo_white.svg"
                 }
                 alt="Atoma Media"
                 width={31}
@@ -348,9 +348,9 @@ export const Navbar = () => {
 
           <div
             className={`${
-              isDropdownOpen ? "bg-transparent" : "bg-white/40"
+              isDropdownOpen ? "bg-transparent" : "bg-black/40"
             } backdrop-blur-sm px-6 h-12 rounded-bl-3xl border-b border-l ${
-              isDropdownOpen ? "border-transparent" : "border-gray-200"
+              isDropdownOpen ? "border-transparent" : "border-gray-200/20"
             } transition-all duration-300 ease-in-out`}
           >
             <div className="flex items-center h-full">

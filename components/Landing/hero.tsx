@@ -7,7 +7,7 @@ import { Demo } from "./Demo";
 const AtomSVG = () => (
   <svg
     viewBox="0 0 240 240"
-    className="w-full h-full absolute inset-0"
+    className="w-full h-full absolute inset-0 text-white"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -78,9 +78,9 @@ export const Hero = () => {
         {/* Gradient Blob */}
         <motion.div
           className="absolute top-[350px] -right-[100px] w-[800px] h-[800px] pointer-events-none -translate-y-1/2"
-          initial={{ opacity: 0.2 }}
+          initial={{ opacity: 0.1 }}
           animate={{
-            opacity: isHovered ? 0.3 : 0.2,
+            opacity: isHovered ? 0.2 : 0.1,
           }}
           transition={{ duration: 0.3 }}
         >
@@ -95,7 +95,7 @@ export const Hero = () => {
                 {/* First Line */}
                 <div className="overflow-hidden h-[3rem] md:h-[6rem]">
                   <motion.h1
-                    className="text-[3rem] md:text-[6rem] font-satoshi font-medium leading-[0.7] tracking-[-0.01em] text-black"
+                    className="text-[3rem] md:text-[6rem] font-satoshi font-medium leading-[0.7] tracking-[-0.01em] text-white"
                     initial={{ y: "150%" }}
                     animate={{ y: 0 }}
                     transition={{ duration: 0.5, ease: [0.33, 1, 0.68, 1] }}
@@ -121,9 +121,9 @@ export const Hero = () => {
                 </div>
 
                 {/* Third Line */}
-                <div className="overflow-hidden h-[3rem] md:h-[6rem] ">
+                <div className="overflow-hidden h-[3rem] md:h-[6rem]">
                   <motion.span
-                    className="text-[3rem] md:text-[6rem] font-satoshi font-medium leading-[0.7] tracking-[-0.01em] text-black block"
+                    className="text-[3rem] md:text-[6rem] font-satoshi font-medium leading-[0.7] tracking-[-0.01em] text-white block"
                     initial={{ y: "180%" }}
                     animate={{ y: 0 }}
                     transition={{
