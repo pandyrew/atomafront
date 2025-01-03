@@ -94,3 +94,17 @@
 .rounded-bl-3xl {
   border-bottom-left-radius: 0;
 }
+
+.glow-effect-dark {
+  box-shadow: 0 0 30px 5px rgba(59, 130, 246, 0.2);
+  animation: glow-dark 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-dark {
+  from {
+    box-shadow: 0 0 30px 5px rgba(59, 130, 246, 0.2);
+  }
+  to {
+    box-shadow: 0 0 40px 8px rgba(59, 130, 246, 0.4);
+  }
+}

@@ -83,7 +83,7 @@ export const Demo = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3, delay: 0.8 }}
     >
-      <p className="text-sm font-satoshi text-black">Try the demo</p>
+      <p className="text-sm font-satoshi text-white">Try the demo</p>
       <form onSubmit={handleDemo}>
         <div className="space-y-3">
           <div className="relative">
@@ -98,13 +98,13 @@ export const Demo = () => {
                   ? "Paste a news article URL or enter a search term"
                   : placeholderText
               }
-              className="rounded-xl w-full px-4 py-3 bg-white/50 backdrop-blur-sm -xl border border-gray-200 
-                outline-none focus:border-gray-300 transition-all duration-200 font-satoshi placeholder:text-gray-400
-                pr-[120px] text-black text-sm"
+              className="rounded-xl w-full px-4 py-3 bg-black/50 backdrop-blur-sm border border-white/20 
+                outline-none focus:border-gray-300 transition-all duration-200 font-satoshi placeholder:text-gray-500
+                pr-[120px] text-white text-sm"
             />
             <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2 text-xs text-gray-400">
               <span className="font-satoshi">or</span>
-              <kbd className="px-1.5 py-0.5 bg-gray-100 -md font-satoshi">
+              <kbd className="px-1.5 py-0.5 bg-white/10 rounded-md font-satoshi text-gray-300">
                 ⌘K
               </kbd>
             </div>
@@ -112,14 +112,14 @@ export const Demo = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full h-10 inline-flex rounded-xl items-center justify-center gap-2 bg-black text-white hover:bg-gray-900 
-              -xl disabled:opacity-50 disabled:pointer-events-none transition-colors text-sm font-satoshi"
+            className="w-full h-10 inline-flex rounded-xl items-center justify-center gap-2 bg-white text-black hover:bg-gray-200 
+              disabled:opacity-50 disabled:pointer-events-none transition-colors text-sm font-satoshi"
           >
             {isLoading ? (
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="w-4 h-4 border-2 border-white/30 border-t-white -full"
+                className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full"
               />
             ) : (
               <>
@@ -131,7 +131,7 @@ export const Demo = () => {
         </div>
       </form>
 
-      <div className="flex items-center gap-4 text-xs text-gray-500">
+      <div className="flex items-center gap-4 text-xs text-gray-400">
         <div className="flex items-center gap-1.5">
           <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none">
             <path

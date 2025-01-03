@@ -20,7 +20,7 @@ const StepCard = ({
 }: StepCardProps) => {
   return (
     <motion.div
-      className={`-3xl p-8 h-full ${color}`}
+      className={`rounded-xl p-8 h-full bg-black/50 backdrop-blur-sm border border-white/20`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -28,10 +28,10 @@ const StepCard = ({
       transition={{ duration: 0.3 }}
     >
       <div className="flex items-start justify-start gap-3 mb-6">
-        <div className="bg-white/90 p-2 -xl">{icon}</div>
-        <span className="text-2xl font-satoshi">{title}</span>
+        <div className="bg-white/10 p-2 rounded-xl text-white">{icon}</div>
+        <span className="text-2xl font-satoshi text-white">{title}</span>
       </div>
-      <p className="text-gray-800 font-satoshi mb-8">{description}</p>
+      <p className="text-gray-400 font-satoshi mb-8">{description}</p>
     </motion.div>
   );
 };
@@ -41,7 +41,7 @@ export const Edge = () => {
     <section className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.h2
-          className="text-4xl md:text-5xl font-satoshi text-center mb-16"
+          className="text-4xl md:text-5xl font-satoshi text-center mb-16 text-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

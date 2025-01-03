@@ -13,7 +13,7 @@ import { Availability } from "@/components/Landing/Availability";
 
 export default function Page() {
   return (
-    <div className="relative w-full bg-[#171717]">
+    <div className="relative w-full bg-black">
       <Footer />
       <Navbar />
       <Noise />

@@ -78,7 +78,7 @@ export const FAQ = () => {
 
   return (
     <section className="py-24 px-4 relative overflow-hidden bg-[#171717]">
-      <div className="max-w-3xl mx-auto bg-black/50 backdrop-blur-sm rounded-xl py-12 px-16 relative">
+      <div className="max-w-3xl mx-auto bg-black/50 backdrop-blur-sm rounded-xl py-12 px-32 relative">
         <div className="flex justify-between items-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

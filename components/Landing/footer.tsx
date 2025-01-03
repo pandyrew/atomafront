@@ -13,20 +13,20 @@ export const Footer = () => {
   return (
     <motion.footer
       style={{ opacity: footerOpacity }}
-      className="fixed bottom-0 left-0 w-full bg-white min-h-[40vh] z-0"
+      className="fixed bottom-0 left-0 w-full bg-black min-h-[40vh] z-0"
     >
       <div className="max-w-7xl mx-auto py-20 px-6">
         <div className="grid grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1">
             <Image
-              src={black_logo}
+              src={"/images/landing/text_logo_white.svg"}
               alt="Atoma Media"
               width={31}
               height={31}
               className="h-[31px] w-auto mb-6"
             />
-            <p className="text-sm text-gray-600 font-satoshi">
+            <p className="text-sm text-gray-400 font-satoshi">
               Empowering traders with AI-driven insights and automated
               strategies.
             </p>
@@ -34,14 +34,14 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div className="col-span-1">
-            <h3 className="font-outfit text-sm font-medium mb-4">
+            <h3 className="font-outfit text-sm font-medium text-white mb-4">
               Quick Links
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/dashboard"
-                  className="text-sm text-gray-600 hover:text-black transition-colors font-satoshi"
+                  className="text-sm text-gray-400 hover:text-white transition-colors font-satoshi"
                 >
                   Dashboard
                 </Link>
@@ -49,7 +49,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="/pricing"
-                  className="text-sm text-gray-600 hover:text-black transition-colors font-satoshi"
+                  className="text-sm text-gray-400 hover:text-white transition-colors font-satoshi"
                 >
                   Pricing
                 </Link>
@@ -57,7 +57,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-sm text-gray-600 hover:text-black transition-colors font-satoshi"
+                  className="text-sm text-gray-400 hover:text-white transition-colors font-satoshi"
                 >
                   About Us
                 </Link>
@@ -67,12 +67,12 @@ export const Footer = () => {
 
           {/* Resources */}
           <div className="col-span-1">
-            <h3 className="font-outfit text-sm font-medium mb-4">Resources</h3>
+            <h3 className="font-outfit text-sm font-medium text-white mb-4">Resources</h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="#"
-                  className="text-sm text-gray-600 hover:text-black transition-colors font-satoshi"
+                  className="text-sm text-gray-400 hover:text-white transition-colors font-satoshi"
                 >
                   Documentation
                 </Link>
@@ -80,7 +80,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-sm text-gray-600 hover:text-black transition-colors font-satoshi"
+                  className="text-sm text-gray-400 hover:text-white transition-colors font-satoshi"
                 >
                   API Reference
                 </Link>
@@ -88,7 +88,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-sm text-gray-600 hover:text-black transition-colors font-satoshi"
+                  className="text-sm text-gray-400 hover:text-white transition-colors font-satoshi"
                 >
                   Blog
                 </Link>
@@ -98,17 +98,17 @@ export const Footer = () => {
 
           {/* Contact */}
           <div className="col-span-1">
-            <h3 className="font-outfit text-sm font-medium mb-4">Contact</h3>
+            <h3 className="font-outfit text-sm font-medium text-white mb-4">Contact</h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:hello@atoma.ai"
-                  className="text-sm text-gray-600 hover:text-black transition-colors font-satoshi"
+                  className="text-sm text-gray-400 hover:text-white transition-colors font-satoshi"
                 >
                   hello@atoma.ai
                 </a>
               </li>
-              <li className="text-sm text-gray-600 font-satoshi">
+              <li className="text-sm text-gray-400 font-satoshi">
                 San Francisco, CA
               </li>
             </ul>
@@ -116,21 +116,21 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-gray-200">
+        <div className="mt-16 pt-8 border-t border-gray-800">
           <div className="flex justify-between items-center">
-            <p className="text-sm text-gray-600 font-satoshi">
+            <p className="text-sm text-gray-400 font-satoshi">
               © 2024 Atoma Media. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link
                 href="#"
-                className="text-sm text-gray-600 hover:text-black transition-colors font-satoshi"
+                className="text-sm text-gray-400 hover:text-white transition-colors font-satoshi"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="#"
-                className="text-sm text-gray-600 hover:text-black transition-colors font-satoshi"
+                className="text-sm text-gray-400 hover:text-white transition-colors font-satoshi"
               >
                 Terms of Service
               </Link>
