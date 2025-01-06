@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 // Types
-type ActiveDropdown = "companies" | "about" | null;
+type ActiveDropdown = "products" | "about" | null;
 
 interface NavDropdownProps {
   id: string;
@@ -20,7 +20,9 @@ interface NavDropdownProps {
 
 // Add proper typing for the NavMenu component
 interface NavMenuProps {
-  children: React.ReactElement<NavDropdownProps>[];
+  children:
+    | React.ReactElement<NavDropdownProps>
+    | React.ReactElement<NavDropdownProps>[];
 }
 
 const NavMenu = ({ children }: NavMenuProps) => {
@@ -175,8 +177,8 @@ const NavDropdown = ({
               {items.map((item, index) => (
                 <Link
                   key={item}
-                  href="#"
-                  className="text-sm hover:text-gray-300 text-white font-satoshi transition-all duration-300 ease-in-out transform group-hover:translate-y-0 translate-y-2 opacity-0 group-hover:opacity-100"
+                  href={item === "View All" ? "#products" : item.toLowerCase()}
+                  className="whitespace-nowrap text-sm hover:text-gray-300 text-white font-satoshi transition-all duration-300 ease-in-out transform group-hover:translate-y-0 translate-y-2 opacity-0 group-hover:opacity-100"
                   style={{
                     transitionDelay: `${index * 50}ms`,
                   }}
@@ -295,52 +297,44 @@ export const Navbar = () => {
               isDropdownOpen ? "border-transparent" : "border-gray-200"
             } transition-all duration-300 ease-in-out`}
           >
-            {/* Logo */}
-            <div className="flex-shrink-0 mr-12 transition-all duration-300 ease-in-out">
-              <Image
-                src={
-                  isDropdownOpen
-                    ? "/images/landing/text_logo_white.svg"
-                    : "/images/landing/text_logo_black.svg"
-                }
-                alt="Atoma Media"
-                width={31}
-                height={31}
-                className="h-[31px] w-auto"
-              />
-            </div>
+            <Link href="/">
+              {/* Logo */}
+              <div className="flex-shrink-0 mr-12 transition-all duration-300 ease-in-out">
+                <Image
+                  src={
+                    isDropdownOpen
+                      ? "/images/landing/text_logo_white.svg"
+                      : "/images/landing/text_logo_black.svg"
+                  }
+                  alt="Atoma Media"
+                  width={31}
+                  height={31}
+                  className="h-[31px] w-auto"
+                />
+              </div>
+            </Link>
 
             {/* Main Navigation */}
             <NavMenu>
               <NavDropdown
-                id="companies"
-                title="Companies"
-                items={["View All", "Featured", "Recent"]}
+                id="products"
+                title="Products"
+                items={["View All", "AtomaLuna", "Coming Soon"]}
                 onHover={(hovering) => {
                   setIsDropdownOpen(hovering);
-                  setActiveDropdown(hovering ? "companies" : null);
+                  setActiveDropdown(hovering ? "products" : null);
                 }}
                 isDark={isDropdownOpen}
-                isActive={activeDropdown === "companies"}
-              />
-              <NavDropdown
-                id="about"
-                title="About"
-                items={["Mission", "Team", "Contact"]}
-                onHover={(hovering) => {
-                  setIsDropdownOpen(hovering);
-                  setActiveDropdown(hovering ? "about" : null);
-                }}
-                isDark={isDropdownOpen}
-                isActive={activeDropdown === "about"}
+                isActive={activeDropdown === "products"}
               />
             </NavMenu>
-            <div className="flex items-center h-full mr-2">
+            <div className="flex items-center h-full mr-2 space-x-8">
               <NavLink
-                href="/pricing"
+                href="#pricing"
                 title="Pricing"
                 isDark={isDropdownOpen}
               />
+              <NavLink href="/about" title="About" isDark={isDropdownOpen} />
             </div>
           </div>
 

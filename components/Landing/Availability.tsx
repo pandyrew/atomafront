@@ -17,7 +17,7 @@ export const Availability = () => {
 
   return (
     <section
-      className="py-32 pb-12 px-4 relative overflow-hidden"
+      className="pt-48 md:pb-24 pb-12 px-4 relative overflow-hidden bg-[#0f0f0f]"
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto">
@@ -27,9 +27,9 @@ export const Availability = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-8 mb-24"
           >
-            <h2 className="text-3xl md:text-4xl font-outfit text-black">
+            <h2 className="text-3xl md:text-4xl font-outfit text-white">
               Available on
               <br />
               web and iOS <span className="text-gray-500">(coming soon)</span>
