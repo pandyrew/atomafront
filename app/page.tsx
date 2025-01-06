@@ -11,6 +11,7 @@ import CompatibleCompanies from "@/components/Landing/compatible";
 import { Edge } from "@/components/Landing/edge";
 import { Availability } from "@/components/Landing/Availability";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { Statistics } from "@/components/Landing/Statistics";
 
 export default function Page() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -18,7 +19,6 @@ export default function Page() {
   return (
     <div className="relative w-full bg-white">
       <Footer />
-      <Navbar />
       <Noise />
       <div className="relative z-10 translate-y-0 pb-[42vh] pointer-events-none">
         <div className="bg-slate-100 pointer-events-auto">
@@ -32,6 +32,7 @@ export default function Page() {
           <Edge />
           <FAQ />
           <Availability />
+          <Statistics />
           <Pricing />
         </div>
       </div>
