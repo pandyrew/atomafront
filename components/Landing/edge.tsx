@@ -30,6 +30,7 @@ const StepCard = ({ title, description, icon, color }: StepCardProps) => {
   );
 };
 
+// Halt!
 export const Edge = () => {
   return (
     <section className="py-24 px-4">
