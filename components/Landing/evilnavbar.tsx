@@ -247,6 +247,7 @@ export const EvilNavbar = () => {
   const [activeDropdown, setActiveDropdown] =
     React.useState<ActiveDropdown>(null);
   const [isVisible, setIsVisible] = React.useState(true);
+  const [isHovering, setIsHovering] = React.useState(false);
   const lastScrollY = React.useRef(0);
 
   useEffect(() => {
@@ -254,10 +255,7 @@ export const EvilNavbar = () => {
       const currentScrollY = window.scrollY;
       const scrollDelta = currentScrollY - lastScrollY.current;
 
-      // Only update if we've scrolled more than 10px
       if (Math.abs(scrollDelta) > 10) {
-        // Show navbar when scrolling up, hide when scrolling down
-        // But always show at the very top
         if (currentScrollY < 100) {
           setIsVisible(true);
         } else {
@@ -271,8 +269,16 @@ export const EvilNavbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const shouldShow = isVisible || isHovering;
+
   return (
     <>
+      {/* Hover detection area */}
+      <div
+        className="fixed top-0 left-0 w-full h-4 z-[98]"
+        onMouseEnter={() => setIsHovering(true)}
+      />
+
       {/* Dark overlay when dropdown is open */}
       <div
         className={`fixed inset-0 bg-black transition-all duration-300 ease-in-out z-[98] ${
@@ -284,9 +290,10 @@ export const EvilNavbar = () => {
 
       <motion.nav
         className="fixed top-0 left-0 right-0 w-full z-[99]"
-        initial={{ y: 0 }}
-        animate={{ y: isVisible ? 0 : -100 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: shouldShow ? 1 : 0 }}
         transition={{ duration: 0.2 }}
+        onMouseLeave={() => setIsHovering(false)}
       >
         <div className="flex items-center justify-between mx-auto relative">
           {/* Left Block: Logo and Navigation */}

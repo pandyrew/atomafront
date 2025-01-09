@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { Navbar } from "@/components/Landing/navbar";
 import { Noise } from "@/components/Landing/noise";
 import { Hero } from "@/components/Landing/hero";
 import { ParallaxPreview } from "@/components/Landing/parallax-preview";
@@ -12,12 +11,13 @@ import { Edge } from "@/components/Landing/edge";
 import { Availability } from "@/components/Landing/Availability";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Statistics } from "@/components/Landing/Statistics";
-
+import { NavbarSwitch } from "@/components/Landing/NavbarSwitch";
 export default function Page() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   return (
     <div className="relative w-full bg-white">
+      <NavbarSwitch />
       <Footer />
       <Noise />
       <div className="relative z-10 translate-y-0 pb-[42vh] pointer-events-none">
