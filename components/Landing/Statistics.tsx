@@ -33,6 +33,7 @@ export const Statistics = () => {
 
   return (
     <section
+      id="statistics-section"
       className="relative bg-[#0f0f0f] py-24 overflow-visible z-2 pb-48"
       ref={containerRef}
     >

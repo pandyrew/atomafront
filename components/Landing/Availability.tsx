@@ -17,6 +17,7 @@ export const Availability = () => {
 
   return (
     <section
+      id="availability-section"
       className="pt-48 md:pb-24 pb-12 px-4 relative overflow-hidden bg-[#0f0f0f]"
       ref={containerRef}
     >
