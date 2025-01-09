@@ -242,7 +242,7 @@ const NavLink = ({
   );
 };
 
-export const Navbar = () => {
+export const Navbar = ({ isDarkMode = false }) => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const [activeDropdown, setActiveDropdown] =
     React.useState<ActiveDropdown>(null);
@@ -269,18 +269,51 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollingDown = isVisible
-  const hovering = isHovering
+  const shouldShow = isVisible || isHovering;
+
+  // Pre-compute class names to ensure consistency
+  const leftBlockClasses = [
+    "flex items-center",
+    isDropdownOpen
+      ? "bg-transparent"
+      : isDarkMode
+      ? "bg-black/40"
+      : "bg-white/40",
+    "backdrop-blur-sm px-6 h-12 rounded-br-3xl border-b border-r",
+    isDropdownOpen
+      ? "border-transparent"
+      : isDarkMode
+      ? "border-gray-200/20"
+      : "border-gray-200",
+    "transition-all duration-300 ease-in-out",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const rightBlockClasses = [
+    isDropdownOpen
+      ? "bg-transparent"
+      : isDarkMode
+      ? "bg-black/40"
+      : "bg-white/40",
+    "backdrop-blur-sm px-6 h-12 rounded-bl-3xl border-b border-l",
+    isDropdownOpen
+      ? "border-transparent"
+      : isDarkMode
+      ? "border-gray-200/20"
+      : "border-gray-200",
+    "transition-all duration-300 ease-in-out",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <>
-      {/* Hover detection area */}
       <div
         className="fixed top-0 left-0 w-full h-4 z-[98]"
         onMouseEnter={() => setIsHovering(true)}
       />
 
-      {/* Dark overlay when dropdown is open */}
       <div
         className={`fixed inset-0 bg-black transition-all duration-300 ease-in-out z-[98] ${
           isDropdownOpen
@@ -292,25 +325,17 @@ export const Navbar = () => {
       <motion.nav
         className="fixed top-0 left-0 right-0 w-full z-[99]"
         initial={{ opacity: 0 }}
-        animate={{ opacity: scrollingDown ? 1 : 0 }}
+        animate={{ opacity: shouldShow ? 1 : 0 }}
         transition={{ duration: 0.2 }}
         onMouseLeave={() => setIsHovering(false)}
       >
         <div className="flex items-center justify-between mx-auto relative">
-          {/* Left Block: Logo and Navigation */}
-          <div
-            className={`flex items-center ${
-              isDropdownOpen ? "bg-transparent" : "bg-white/40"
-            } backdrop-blur-sm px-6 h-12 rounded-br-3xl border-b border-r ${
-              isDropdownOpen ? "border-transparent" : "border-gray-200"
-            } transition-all duration-300 ease-in-out`}
-          >
+          <div className={leftBlockClasses}>
             <Link href="/">
-              {/* Logo */}
               <div className="flex-shrink-0 mr-12 transition-all duration-300 ease-in-out">
                 <Image
                   src={
-                    isDropdownOpen
+                    isDropdownOpen || isDarkMode
                       ? "/images/landing/text_logo_white.svg"
                       : "/images/landing/text_logo_black.svg"
                   }
@@ -322,7 +347,6 @@ export const Navbar = () => {
               </div>
             </Link>
 
-            {/* Main Navigation */}
             <NavMenu>
               <NavDropdown
                 id="products"
@@ -332,7 +356,7 @@ export const Navbar = () => {
                   setIsDropdownOpen(hovering);
                   setActiveDropdown(hovering ? "products" : null);
                 }}
-                isDark={isDropdownOpen}
+                isDark={isDropdownOpen || isDarkMode}
                 isActive={activeDropdown === "products"}
               />
             </NavMenu>
@@ -340,24 +364,22 @@ export const Navbar = () => {
               <NavLink
                 href="#pricing"
                 title="Pricing"
-                isDark={isDropdownOpen}
+                isDark={isDropdownOpen || isDarkMode}
               />
-              <NavLink href="/about" title="About" isDark={isDropdownOpen} />
+              <NavLink
+                href="/about"
+                title="About"
+                isDark={isDropdownOpen || isDarkMode}
+              />
             </div>
           </div>
 
-          <div
-            className={`${
-              isDropdownOpen ? "bg-transparent" : "bg-white/40"
-            } backdrop-blur-sm px-6 h-12 rounded-bl-3xl border-b border-l ${
-              isDropdownOpen ? "border-transparent" : "border-gray-200"
-            } transition-all duration-300 ease-in-out`}
-          >
+          <div className={rightBlockClasses}>
             <div className="flex items-center h-full">
               <NavLink
                 href="/dashboard"
                 title="Dashboard"
-                isDark={isDropdownOpen}
+                isDark={isDropdownOpen || isDarkMode}
               />
             </div>
           </div>
