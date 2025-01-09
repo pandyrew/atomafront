@@ -99,11 +99,11 @@
   border-bottom-left-radius: 0;
 } */
 
-body {
+/* Remove or comment out these styles */
+/* body {
   background-color: #0e1013;
 }
 
-/* Optional: If you want to prevent any white flash during page loads */
 html {
   background-color: #0e1013;
-}
+} */
