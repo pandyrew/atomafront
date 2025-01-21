@@ -74,7 +74,7 @@ export default function ComingSoon() {
                 transition={{ duration: 0.4, delay: 0.6 }}
                 className="grid md:grid-cols-3 gap-8 mt-24"
               >
-                {features.map((feature, index) => (
+                {features.map((feature) => (
                   <div
                     key={feature.title}
                     className="p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 text-left"
@@ -102,7 +102,7 @@ const features = [
     title: "Advanced Analytics",
     description:
       "Powerful tools for deep market analysis and trend prediction.",
-    icon: function ChartIcon(props: any) {
+    icon: function ChartIcon(props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg
           {...props}
@@ -126,7 +126,7 @@ const features = [
   {
     title: "Real-time Updates",
     description: "Stay informed with instant market data and news alerts.",
-    icon: function BoltIcon(props: any) {
+    icon: function BoltIcon(props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg
           {...props}
@@ -148,7 +148,7 @@ const features = [
   {
     title: "AI-Powered Insights",
     description: "Leverage machine learning for smarter investment decisions.",
-    icon: function BrainIcon(props: any) {
+    icon: function BrainIcon(props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg
           {...props}

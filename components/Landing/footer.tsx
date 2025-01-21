@@ -1,15 +1,11 @@
 "use client";
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import black_logo from "@/public/images/landing/text_logo_black.svg";
 
 export const Footer = () => {
-  // Add scroll animation logic
-  const { scrollYProgress } = useScroll();
-  const footerOpacity = useTransform(scrollYProgress, [0.8, 0.9], [0, 1]);
-
   return (
     <motion.footer className="fixed bottom-0 left-0 w-full bg-white min-h-[40vh] -z-[9]">
       <div className="max-w-7xl mx-auto py-20 px-6">

@@ -2,14 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import {
-  FileText,
-  BarChart2,
-  TrendingUp,
-  Target,
-  ClipboardList,
-  Lightbulb,
-} from "lucide-react";
+import { FileText, BarChart2, TrendingUp } from "lucide-react";
 
 export default function Features() {
   return (
