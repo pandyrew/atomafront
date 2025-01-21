@@ -17,8 +17,9 @@ export default function Page() {
   return (
     <div className="relative w-full bg-white min-h-screen">
       <Footer />
-      <div className="relative z-10 translate-y-0 pb-[42vh] pointer-events-none">
-        <Noise />
+      <Noise />
+
+      <div className="relative z-10 translate-y-0 mb-[42vh] pointer-events-none">
         <div className="bg-slate-100 pointer-events-auto">
           <div className="h-screen relative">
             <Hero />

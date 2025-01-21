@@ -1,13 +1,20 @@
-import { Hero } from "@/components/LunaLanding/hero";
+import Hero from "@/components/LunaLanding/hero";
+import Features from "@/components/LunaLanding/Features";
 import { Noise } from "@/components/Landing/noise";
+import { Footer } from "@/components/Landing/footer";
 
-export default function Atomaluna() {
+export default function AtomaLuna() {
   return (
-    <main className="relative bg-[#0E1013] min-h-screen overflow-x-hidden">
-      {/* Background wrapper that ensures dark bg extends fully */}
-      <div className="fixed inset-0 bg-[#0E1013] -z-10" />
-      <Hero />
+    <div className="relative w-full bg-black min-h-screen">
+      <Footer />
       <Noise />
-    </main>
+      <div className="fixed inset-0 bg-black -z-10" />
+      <div className="relative z-10 translate-y-0 mb-[42vh] pointer-events-none">
+        <div className="bg-black pointer-events-auto">
+          <Hero />
+          <Features />
+        </div>
+      </div>
+    </div>
   );
 }
