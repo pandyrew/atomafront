@@ -9,7 +9,9 @@ export const NavbarSwitch = () => {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   const isAtomLunaPage = pathname === "/atomaluna";
-  const isAvailabilityVisible = useSectionInView("availability-section", 1.0);
+  const isComingSoonPage = pathname === "/coming-soon";
+  const isAllProductsPage = pathname === "/all-products";
+  const isAvailabilityVisible = useSectionInView("availability-section", 1);
   const isStatisticsVisible = useSectionInView("statistics-section", 0.1);
 
   useEffect(() => {
@@ -17,7 +19,12 @@ export const NavbarSwitch = () => {
   }, []);
 
   const isDarkMode =
-    mounted && (isAtomLunaPage || isAvailabilityVisible || isStatisticsVisible);
+    mounted &&
+    (isAtomLunaPage ||
+      isAvailabilityVisible ||
+      isStatisticsVisible ||
+      isComingSoonPage ||
+      isAllProductsPage);
 
   return <Navbar isDarkMode={isDarkMode} />;
 };

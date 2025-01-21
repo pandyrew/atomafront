@@ -11,10 +11,7 @@ export const Footer = () => {
   const footerOpacity = useTransform(scrollYProgress, [0.8, 0.9], [0, 1]);
 
   return (
-    <motion.footer
-      style={{ opacity: footerOpacity }}
-      className="fixed bottom-0 left-0 w-full bg-white min-h-[40vh] z-0"
-    >
+    <motion.footer className="fixed bottom-0 left-0 w-full bg-white min-h-[40vh] -z-[9]">
       <div className="max-w-7xl mx-auto py-20 px-6">
         <div className="grid grid-cols-4 gap-8">
           {/* Logo and Description */}

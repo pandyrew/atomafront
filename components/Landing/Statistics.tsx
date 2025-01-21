@@ -16,20 +16,37 @@ export const Statistics = () => {
     line3: ["with", "AI-powered", "market", "analysis"],
   };
 
-  // Create individual transforms for each word with increasing offset
-  const createWordTransforms = (index: number) => {
-    const startOpacity = 0.1 + index * 0.02;
-    const endOpacity = Math.min(startOpacity + 0.1, 0.7);
+  const useWordTransforms = () => {
+    const totalWords =
+      words.line1.length + words.line2.length + words.line3.length;
+    const transforms = Array.from({ length: totalWords }, (_, index) => {
+      const startOpacity = 0.1 + index * 0.02;
+      const endOpacity = Math.min(startOpacity + 0.1, 0.7);
+      return {
+        opacity: useTransform(
+          scrollYProgress,
+          [startOpacity, endOpacity],
+          [0, 1]
+        ),
+        y: useTransform(scrollYProgress, [startOpacity, endOpacity], [20, 0]),
+      };
+    });
 
     return {
-      opacity: useTransform(
-        scrollYProgress,
-        [startOpacity, endOpacity],
-        [0, 1]
+      line1: transforms.slice(0, words.line1.length),
+      line2: transforms.slice(
+        words.line1.length,
+        words.line1.length + words.line2.length
       ),
-      y: useTransform(scrollYProgress, [startOpacity, endOpacity], [20, 0]),
+      line3: transforms.slice(words.line1.length + words.line2.length),
     };
   };
+
+  const {
+    line1: line1Transforms,
+    line2: line2Transforms,
+    line3: line3Transforms,
+  } = useWordTransforms();
 
   return (
     <section
@@ -49,7 +66,7 @@ export const Statistics = () => {
               {words.line1.map((word, i) => (
                 <motion.span
                   key={i}
-                  style={createWordTransforms(i)}
+                  style={line1Transforms[i]}
                   className="inline-block"
                 >
                   {word}
@@ -63,7 +80,7 @@ export const Statistics = () => {
               {words.line2.map((word, i) => (
                 <motion.span
                   key={i}
-                  style={createWordTransforms(i + words.line1.length)}
+                  style={line2Transforms[i]}
                   className={`inline-block ${
                     word === "2.3x"
                       ? "bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent"
@@ -79,9 +96,7 @@ export const Statistics = () => {
               {words.line3.map((word, i) => (
                 <motion.span
                   key={i}
-                  style={createWordTransforms(
-                    i + words.line1.length + words.line2.length
-                  )}
+                  style={line3Transforms[i]}
                   className="inline-block"
                 >
                   {word}

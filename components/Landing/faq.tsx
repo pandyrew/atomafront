@@ -21,7 +21,9 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
         onClick={() => setIsOpen(!isOpen)}
         className="py-6 w-full flex justify-between items-center text-left hover:text-gray-600 transition-colors duration-200"
       >
-        <span className="text-base md:text-xl font-outfit text-black pr-4">{question}</span>
+        <span className="text-base md:text-xl font-outfit text-black pr-4">
+          {question}
+        </span>
         <motion.span
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -39,7 +41,9 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-sm md:text-base text-gray-500 font-satoshi">{answer}</p>
+            <p className="pb-6 text-sm md:text-base text-gray-500 font-satoshi">
+              {answer}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>

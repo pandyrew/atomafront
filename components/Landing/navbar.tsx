@@ -177,7 +177,13 @@ const NavDropdown = ({
               {items.map((item, index) => (
                 <Link
                   key={item}
-                  href={item === "View All" ? "#products" : item.toLowerCase()}
+                  href={
+                    item === "View All"
+                      ? "/all-products"
+                      : item === "Coming Soon"
+                      ? "/coming-soon"
+                      : item.toLowerCase()
+                  }
                   className="whitespace-nowrap text-sm hover:text-gray-300 text-white font-satoshi transition-all duration-300 ease-in-out transform group-hover:translate-y-0 translate-y-2 opacity-0 group-hover:opacity-100"
                   style={{
                     transitionDelay: `${index * 50}ms`,
@@ -362,7 +368,7 @@ export const Navbar = ({ isDarkMode = false }) => {
             </NavMenu>
             <div className="flex items-center h-full mr-2 space-x-8">
               <NavLink
-                href="#pricing"
+                href="/#pricing"
                 title="Pricing"
                 isDark={isDropdownOpen || isDarkMode}
               />

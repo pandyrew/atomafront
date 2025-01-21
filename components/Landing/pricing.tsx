@@ -139,7 +139,7 @@ export const Pricing = () => {
   ];
 
   return (
-    <section className="py-12 md:py-24 px-4 relative overflow-hidden">
+    <section id="pricing" className="py-12 md:py-24 px-4 relative overflow-hidden">
       {/* Background Gradient Pattern */}
       <div className="absolute inset-0 z-1">
         <div className="absolute top-[800px] left-1/2 -translate-x-1/2 -translate-y-1/2">
